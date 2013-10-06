@@ -1,5 +1,5 @@
 <?php
-//here goes the configurations of the specific site
+//here goes the metalPeturations of the specific website
 
 
 //defining paths to important folders
@@ -10,19 +10,33 @@ define('_THEME_URL_', _BASE_URL_."theme/");
 define('_CORE_URL_',_BASE_URL_."app/core/");
 define('_MODULES_URL_',_BASE_URL_."app/modules/");
 
-$config=array();
-$config['theme']="default";								//sets which theme to use
-$config['theme_url']=_THEME_URL_.$config['theme'];		//sets path to theme
-$config['develop']=true;								//sets if project is in production phase or not
-$config['debug']=true;									//to display debugging messages
+$metalPet=array();
+$metalPet['theme']="default";				//sets which theme to use
+$metalPet['theme_url']=_THEME_URL_.$metalPet['theme'];		//sets path to theme
+$metalPet['develop']=true;					//sets if project is in production phase or not
+$metalPet['debug']=true;					//to display debugging messages
+$metalPet['log']="\t==START OF LOG==\t\n";	//place to store logging
+$metalPet['lang']="sv";						//Language of the site
+$metalPet['encoding']="utf-8";				//Encoding 
+$metalPet['title']=" - Metal Pet";			//Main title of the site (will append after site specific titles)
 
-if($config['develop']) {	
-	$config['jquery_url']=_3PP_URL_."jquery-2.0.3.js";
-	$config['bootstrap_js']=_3PP_URL_."bootstrap/js/bootstrap.js";
-	$config['bootstrap_css']=_3PP_URL_."bootstrap/css/bootstrap.css";
+if($metalPet['develop']) {	
+	$metalPet['jquery_url']=_3PP_URL_."jquery-2.0.3.js";
+	$metalPet['bootstrap_js']=_3PP_URL_."bootstrap/js/bootstrap.js";
+	$metalPet['bootstrap_css']=_3PP_URL_."bootstrap/css/bootstrap.css";
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
 } else {
-	$config['jquery_url']=_3PP_URL_."jquery-2.0.3.min.js";
-	$config['bootstrap_js']=_3PP_URL_."bootstrap/js/bootstrap.min.js";
-	$config['bootstrap_css']=_3PP_URL_."bootstrap/css/bootstrap.min.css";
-	$config['debug']=false;
+	$metalPet['jquery_url']=_3PP_URL_."jquery-2.0.3.min.js";
+	$metalPet['bootstrap_js']=_3PP_URL_."bootstrap/js/bootstrap.min.js";
+	$metalPet['bootstrap_css']=_3PP_URL_."bootstrap/css/bootstrap.min.css";
+	error_reporting(0);
+	ini_set('display_errors', 0);
+	$metalPet['debug']=false;
 }
+
+include(_SRC_URL_."bootstrap.php");
+
+//Start a session
+session_name(preg_replace('/[:\.\/-_]/', '', __DIR__));
+session_start();
