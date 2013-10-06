@@ -1,5 +1,5 @@
 <?php
-	include("../incl/header.php") 
+	include(_BASE_URL_."views/incl/header.php") 
 ?>
 
   <body>

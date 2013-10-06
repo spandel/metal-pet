@@ -2,12 +2,9 @@
 //here goes the configurations of the specific website
 
 //defining paths to important folders
-//define('_BASE_URL_', "http://" . $_SERVER['HTTP_HOST']."/metal-pet/");
-define('_BASE_URL_', __DIR__."/../");
-//define('_BASE_URL_', 'http://localhost/metal-pet/');
-define('_3PP_URL_', _BASE_URL_.'3pp/');
+define('_3PP_URL_', _HTTP_URL_.'3pp/');
 define('_SRC_URL_', _BASE_URL_."src/");
-define('_THEME_URL_', _BASE_URL_."theme/");
+define('_THEME_URL_', _HTTP_URL_."theme/");
 define('_CORE_URL_',_BASE_URL_."app/core/");
 define('_MODULES_URL_',_BASE_URL_."app/modules/");
 
@@ -36,7 +33,8 @@ if($metalPet['develop']) {
 	ini_set('display_errors', 0);
 	$metalPet['debug']=false;
 }
-
+//echo "<pre>".print_r($_SERVER, true)."</pre>";
+//echo _CORE_URL_."bootstrap.php";
 include(_CORE_URL_."bootstrap.php");
 
 //Start a session
