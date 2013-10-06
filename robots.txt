@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /3pp
+Disallow: /app
+Disallow: /src/db
+Disallow: /theme

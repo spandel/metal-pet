@@ -1,0 +1,3 @@
+Metal Pet is a template/framework developed by Daniel Spandel(daniel.spandel1@gmail.com) in 2013. 
+It uses techniques such as php, css, html, javascript and tools such as jQuery and bootstrap.
+You can find it on GitHub at https://github.com/spandel/metal-pet
