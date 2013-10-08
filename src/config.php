@@ -22,11 +22,14 @@ $metalPet['encoding']="utf-8";				//Encoding
 $metalPet['site_name']="Metal Pet";			//site name
 $metalPet['title_append']=" - ".$metalPet['site_name'];		//Main title of the site (will append after site specific titles)
 //$metalPet['use_bootstrap']=true;			//If css framework bootstrap should be used. To be included in later versions...
+$metalPet['login']=false;
+$metalPet['searchbar']=true;
+$metalPet['copyright'] = "Daniel Spandel &copy; 2013";
 
 $metalPet['menu'] =array(
 	'Home'=>'index',
-	'About'=>'index#anchortest',
-	'Contact'=>'contact',
+	'About'=>'about',
+	'GitHub'=>'http://github.com/spandel/metal-pet',
 	'Dropdown'=>array(
 		'Action'=>'#',
 		'Another action'=>'#',

@@ -1,6 +1,7 @@
-      <hr>
+    <div class="container">
+    <hr>
       <footer>
-        <p>&copy; Company 2013</p>
+        <p><?=$metalPet['copyright']?></p>
       </footer>
     </div> <!-- /container -->
 

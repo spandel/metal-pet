@@ -45,16 +45,14 @@
 				if(isset($metalPet['menu']) && is_array($metalPet['menu'])) {
 					echo createMenu($metalPet['menu'], $metalPet['page']);
 				}
+				if(isset($metalPet['login']) && $metalPet['login']==true) {
+					echo createLogin();					
+				}
+				if(isset($metalPet['searchbar']) && $metalPet['searchbar']==true) {
+					echo createSearchbar();
+				}				
 				?>
-					<form class="navbar-form navbar-right">
-						<div class="form-group">
-							<input type="text" placeholder="Email" class="form-control">
-						</div>
-						<div class="form-group">
-							<input type="password" placeholder="Password" class="form-control">
-						</div>
-						<button type="submit" class="btn btn-success">Sign in</button>
-					</form>
+					
 				</div><!--/.navbar-collapse -->
 			</div>
 		</div>

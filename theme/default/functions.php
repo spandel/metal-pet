@@ -36,7 +36,29 @@ function createMenu($menu, $currentPage) {
 			$rendered_menu.= "<li".$active."><a href='".$prependix.$val."'>".$name."</a></li>\n";
 		}
 	}
-	$rendered_menu.= "</ul>";
-	
+	$rendered_menu.= "</ul>";	
 	return $rendered_menu;
+}
+
+function createLogin() {
+	$login = "<form class='navbar-form navbar-right'>".
+					"		<div class='form-group'>".
+					"		<input type='text' placeholder='Email' class='form-control'>".
+					"	</div>".
+					"	<div class='form-group'>".
+					"		<input type='password' placeholder='Password' class='form-control'>".
+					"	</div>".
+					"	<button type='submit' class='btn btn-success'>Sign in</button>".
+					"</form>";
+	return $login;
+}
+
+function createSearchbar() {
+	$searchbar =  "<form class='navbar-form navbar-right'>".
+					"		<div class='form-group'>".
+					"		<input type='text' placeholder='Search...' class='form-control'>".
+					"	</div>".
+					"	<button type='submit' class='btn btn-success'>Go!</button>".
+					"</form>";
+	return $searchbar;
 }
