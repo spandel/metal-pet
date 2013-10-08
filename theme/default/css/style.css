@@ -2,6 +2,12 @@
 Default style for the current theme
 */
 
+/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-	font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+/* Always show scrollbar*/
+html {
+    overflow-y: scroll;
 }

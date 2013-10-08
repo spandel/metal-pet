@@ -1,33 +1,7 @@
 <?php
+
 	include(_BASE_URL_."views/incl/header.php") 
 ?>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
@@ -37,7 +11,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div id='anchortest' class="container">
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
@@ -56,19 +30,6 @@
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo $metalPet['jquery_url'] ?>"></script>
-    <script src="<?php echo $metalPet['bootstrap_js'] ?>"></script>
-  </body>
-</html>
+<?php
+  include(_BASE_URL_."views/incl/footer.php") 
+?>
