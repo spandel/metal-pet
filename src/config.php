@@ -25,9 +25,10 @@ $metalPet['title_append']=" - ".$metalPet['site_name'];		//Main title of the sit
 $metalPet['login']=false;
 $metalPet['searchbar']=true;
 $metalPet['copyright'] = "Daniel Spandel &copy; 2013";
+$metalPet['rewrite_queries'] = true;
 
 $metalPet['menu'] =array(
-	'Home'=>'index',
+	'Home'=>'home',
 	'About'=>'about',
 	'GitHub'=>'http://github.com/spandel/metal-pet',
 	'Dropdown'=>array(

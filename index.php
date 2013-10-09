@@ -11,7 +11,7 @@
 			$metalPet['page']='404';
 		}
 	} else {
-		$metalPet['page']='index';
+		$metalPet['page']='home';
 	}
 	$metalPet['title']=ucfirst(str_replace('-', ' ', $metalPet['page'])).$metalPet['title_append'];
 	if(is_file($metalPet['theme_server_url']."functions.php")) {

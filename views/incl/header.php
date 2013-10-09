@@ -43,7 +43,7 @@
 				<div class="navbar-collapse collapse">
 				<?php 
 				if(isset($metalPet['menu']) && is_array($metalPet['menu'])) {
-					echo createMenu($metalPet['menu'], $metalPet['page']);
+					echo createMenu($metalPet['menu'], $metalPet['page'], $metalPet['rewrite_queries']);
 				}
 				if(isset($metalPet['login']) && $metalPet['login']==true) {
 					echo createLogin();					

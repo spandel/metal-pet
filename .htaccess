@@ -1,1 +1,10 @@
 #Input your htaccess info here
+#Do not forget to make sure .htaccess and mod_rewrite is enabled on your apache server.
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  # Remember to change rewritebase to relative path from you current root
+  RewriteBase /metal-pet
+  # RewriteCond %{REQUEST_FILENAME} !-f
+  # RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([^/d]+)/?$ index.php?p=$1 [QSA]	
+</IfModule>
