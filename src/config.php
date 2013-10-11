@@ -28,11 +28,11 @@ $metalPet['copyright'] = "Daniel Spandel &copy; 2013";
 $metalPet['rewrite_queries'] = true;
 
 $metalPet['menu'] =array(
-	'Home'=>'home',
-	'About'=>'about',
+	'Home'=>'home/',
+	'About'=>'about/',
 	'GitHub'=>'http://github.com/spandel/metal-pet',
 	'Dropdown'=>array(
-		'Action'=>'#',
+		'Action'=>'home#php-in-the-ground',
 		'Another action'=>'#',
 		'Something else here...'=>'#',
 		'divider'=>'divider',

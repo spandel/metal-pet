@@ -14,12 +14,14 @@
     	//Custom js for this theme
     	if(is_file($metalPet['theme_server_url'].'js/main.js')) {
     		echo "<!-- Custom js for this page -->\n".
-    			"<link href=\"". $metalPet['theme_url']."js/main.js \" rel=\"stylesheet\">\n";
+                 "<script src='".$metalPet['theme_url']."js/main.js'></script>\n";
+    			//"<link href=\"". $metalPet['theme_url']."js/main.js \" rel=\"stylesheet\">\n";
     	}
     	//Custom js for this page
     	if(is_file(_VIEW_SERVER_URL_.'js/'.$metalPet['page'].'.js')) {
     		echo "<!-- Custom js for this page -->\n".
-    			"<link href=\"". _VIEW_URL_."js/". $metalPet['page'] .".js \" rel=\"stylesheet\">\n";
+                 "<script src='".$metalPet['theme_url']."js/".$metalPet['page'].".js'></script>\n";
+    			//"<link href=\"". _VIEW_URL_."js/". $metalPet['page'] .".js \" rel=\"stylesheet\">\n";
     	}
     ?>
   </body>

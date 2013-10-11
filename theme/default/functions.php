@@ -2,12 +2,13 @@
 function createMenu($menu, $currentPage, $rewrite_queries) {	
 	$rendered_menu = '<ul class="nav navbar-nav">\n';
 	$standard_prepend="?p=";
+	$baseurl=_HTTP_URL_;
 	if($rewrite_queries) {
 		$standard_prepend="";
 	}	
 	foreach($menu as $name => $val) {
 		$active="";
-		$prependix=$standard_prepend;
+		$prependix=$baseurl.$standard_prepend;
 		if($currentPage==$val) {
 			$active=" class='active'";
 		}
@@ -15,8 +16,8 @@ function createMenu($menu, $currentPage, $rewrite_queries) {
 			$dropdown_txt="";
 			foreach ($val as $dname => $dval) {
 				$active="";
-				$prependix=$standard_prepend;
-				if(substr($dval, 0, 7 ) === "http://" || $dval[0]==='#')
+				$prependix=$baseurl.$standard_prepend;
+				if(substr($dval, 0, 8 ) === "https://" || substr($dval, 0, 7 ) === "http://")
 					$prependix="";	
 				if($currentPage==$dval) {
 					$active=" class='active'";
@@ -34,8 +35,8 @@ function createMenu($menu, $currentPage, $rewrite_queries) {
 			$rendered_menu.= $dropdown_txt;
 			$rendered_menu.= "</ul>\n</li>";
 		} else {
-			if(substr( $val, 0, 7 ) === "http://" || $val[0]==='#')
-				$prependix="";							
+			if(substr( $val, 0, 7 ) === "http://")
+				$prependix="";
 			$rendered_menu.= "<li".$active."><a href='".$prependix.$val."'>".$name."</a></li>\n";
 		}
 	}

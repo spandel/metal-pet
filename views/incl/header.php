@@ -38,7 +38,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"><?=$metalPet['site_name']?></a>
+					<a class="navbar-brand" href="<?=_HTTP_URL_?>home/"><?=$metalPet['site_name']?></a>
 				</div>
 				<div class="navbar-collapse collapse">
 				<?php 

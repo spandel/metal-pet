@@ -2,9 +2,31 @@
 #Do not forget to make sure .htaccess and mod_rewrite is enabled on your apache server.
 <IfModule mod_rewrite.c>
   RewriteEngine on
+
   # Remember to change rewritebase to relative path from you current root
   RewriteBase /metal-pet
-  # RewriteCond %{REQUEST_FILENAME} !-f
-  # RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^([^/d]+)/?$ index.php?p=$1 [QSA]	
+
+  #excluding src files from rewriting
+  RewriteRule \.(css|js|jpg|png|gif)$ - [L]
+  RewriteRule ^(src)/ - [L]
+  ###
+
+  #####
+  #
+  # The following rules rewrites like this:
+  #
+  # Rewritebase/home/is/here/
+  #  to
+  # Rewritebase/index.php?p=home&p1=is&p2=here
+  # 
+  # Rewritebase/index.php then handles page-requests (As a front controller).
+  # Should work with or without trailing slash
+  #####
+
+  RewriteRule ^(.*)/(.*)/(.*)/(.)?$ index.php?p=$1&p1=$2&p2=$3 [L]
+  RewriteRule ^([^/d]+)/([^/d]+)/([^/d]+)/?$ index.php?p=$1&p1=$2&p2=$3 [L]
+  RewriteRule ^(.*)/(.*)/(.)?$ index.php?p=$1&p1=$2 [L]
+  RewriteRule ^(.*)/(.)?$ index.php?p=$1 [L]
+  RewriteRule ^([^/d]+)/?$ index.php?p=$1 [L]
+  RewriteRule ^([^/d]+)/(.*)/?$ index.php?p=$1&p1=$2 [L]
 </IfModule>

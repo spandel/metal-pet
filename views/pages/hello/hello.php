@@ -4,7 +4,7 @@
 		<!-- Main jumbotron for a primary marketing message or call to action -->
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Metal Pet is the new black</h1>
+				<h1>Hello php</h1>
 				<p>
 					A web development, php-based, Bootstrap-including, kick-ass-folder-structuring, web-site-readying super template!
 
