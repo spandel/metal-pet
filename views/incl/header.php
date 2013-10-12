@@ -8,10 +8,14 @@
 		<meta name="author" content="">
 		<title><?=$metalPet['title']?></title>
 
+		<?php
+        if($metalPet['use_bootstrap']) {
+            ?>
 		<!-- Bootstrap core CSS -->
 		<link href="<?php echo $metalPet['bootstrap_css'] ?>" rel="stylesheet">
 
 		<?php 
+		}
 			//Custom css for this theme
 			if(is_file($metalPet['theme_server_url'].'css/style.css')) {
 				echo "<!-- Custom css for this theme -->\n".

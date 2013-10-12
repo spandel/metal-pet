@@ -3,6 +3,7 @@ function createMenu($menu, $currentPage, $rewrite_queries) {
 	$rendered_menu = '<ul class="nav navbar-nav">\n';
 	$standard_prepend="?p=";
 	$baseurl=_HTTP_URL_;
+
 	if($rewrite_queries) {
 		$standard_prepend="";
 	}	
@@ -65,4 +66,50 @@ function createSearchbar() {
 					"	<button type='submit' class='btn btn-success'>Go!</button>".
 					"</form>";
 	return $searchbar;
+}
+
+function fillDatabaseWithDummyStuff () {
+	$url=_SRC_URL_."db/db.sqlite";
+	$arrr=array(
+			'id'=>"INTEGER PRIMARY KEY",
+			'username'=>'TEXT' ,
+			'fullname'=>'TEXT',
+			'password'=>'TEXT',
+			'since'=>'INTEGER',
+			'salt'=>'TEXT'
+			);
+	$MPDB = new MP_Database('sqlite', $url);
+	$MPDB->createTable('users', $arrr);
+
+	// Array with some test data to insert to database
+	$users = array(
+	              array('username' => 'daniel',
+	                    'fullname' => 'Daniel Spandel',
+	                    'password' => 'groda',
+	                    'since' => time(),
+	                    'salt' => 'adorg',
+	                    ),
+	              array('username' => 'doe',
+	                    'fullname' => 'John Doe',
+	                    'password' => 'doe',
+	                    'since' => time(),
+	                    'salt' => 'eod',
+	                    ),
+	              array('username' => 'test',
+	                    'fullname' => 'Test Testsson',
+	                    'password' => 'test',
+	                    'since' => time(),
+	                    'salt' => 'tset',
+	                    ),
+	            );
+
+	$MPDB->insertValues('users', $users);
+
+	$res=$MPDB->queryFromTable("SELECT * FROM users");
+	foreach($res as $row) {
+		//echo "Username: " . $row['username'] . "\n";
+		echo"<pre>".print_r($row, true)."</pre>";
+	}
+	$MPDB->dropTable('users');
+	$MPDB->closeConnection();
 }
