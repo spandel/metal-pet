@@ -9,6 +9,7 @@ $metalPet['encoding']="utf-8";				//Encoding
 $metalPet['site_name']="Metal Pet";			//site name
 $metalPet['title_append']=" - ".$metalPet['site_name'];		//Main title of the site (will append after site specific titles)
 $metalPet['use_bootstrap']=true;			//If css framework bootstrap should be included
+$metalPet['use_fontAwesome']=true;				//If icon set font entypo and entypo-social should be included
 $metalPet['login']=false;
 $metalPet['searchbar']=true;
 $metalPet['copyright'] = "Daniel Spandel &copy; 2013";
