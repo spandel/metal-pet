@@ -7,7 +7,7 @@
   RewriteBase /metal-pet
 
   #excluding src files from rewriting
-  RewriteRule \.(css|js|jpg|png|gif)$ - [L]
+  RewriteRule \.(css|js|jpg|jpeg|png|gif|eot|ttf|svg|woff)$ - [L]
   RewriteRule ^(src)/ - [L]
   ###
 
