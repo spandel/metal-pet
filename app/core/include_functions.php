@@ -15,6 +15,14 @@ function include_js_before() {
 	}
 	return $js;
 }
+function include_favicon() {
+	global $metalPet;
+	$favicon="";
+	if(isset($metalPet['favicon']) && $metalPet['favicon'] && $metalPet['favicon']!="") {
+		$favicon="<link rel='shortcut icon' href='".$metalPet['favicon']."'/>";
+	}
+	return $favicon;
+}
 function include_js_after() {
 	global $metalPet;
 	$js="";

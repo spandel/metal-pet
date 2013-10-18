@@ -7,6 +7,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<title><?=$metalPet['title']?></title>
+		<?=include_favicon()?>
 		<?=include_css()?>
 		<?=include_js_before()?>
 	</head>
