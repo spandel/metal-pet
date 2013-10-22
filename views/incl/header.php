@@ -15,7 +15,7 @@
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">					
-					<a class="navbar-brand" href="<?=_HTTP_URL_?>home/"><?=$metalPet['site_name']?></a>
+					<a class="navbar-brand" href="<?=create_url('home')?>"><?=$metalPet['site_name']?></a>
 				</div>
 				<div class="navbar-collapse collapse">
 				<?php 

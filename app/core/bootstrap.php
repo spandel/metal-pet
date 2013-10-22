@@ -1,7 +1,8 @@
 <?php
 //defining paths to important folders
 define('_3PP_URL_'			, _HTTP_URL_.'3pp/');
-define('_SRC_URL_'			, _BASE_URL_."src/");
+define('_SRC_URL_'			, _HTTP_URL_."src/");
+define('_SRC_SERVER_URL_'	, _BASE_URL_."src/");
 define('_THEME_URL_'		, _HTTP_URL_."theme/");
 define('_CORE_URL_'			, _BASE_URL_."app/core/");
 define('_MODULES_URL_'		, _BASE_URL_."app/modules/");
@@ -20,9 +21,10 @@ function metalPetAutoLoader($class) {
 spl_autoload_register('metalPetAutoLoader');
 
 
-
+//creating array to hold important data of all kinds
 $metalPet=array();
 
+//creating arrays for css and javascript
 $metalPet['css']				=	array();
 $metalPet['css_ie']				=	array();
 $metalPet['css_ie']['7'] 		=	array();
@@ -33,6 +35,8 @@ $metalPet['js_ie_after']		=	array();
 $metalPet['js_ie_before']['9']	=	array();
 
 include(_BASE_URL_."src/config.php");
+include(_BASE_URL_."app/core/include_functions.php");
+include(_BASE_URL_."app/core/core_functions.php");
 
 $metalPet['theme_url']			=	_THEME_URL_.$metalPet['theme'].'/';				//sets path to theme(client side)
 $metalPet['theme_server_url']	=	_BASE_URL_.'theme/'.$metalPet['theme'].'/';		//sets path to theme(server side)

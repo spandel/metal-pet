@@ -1,15 +1,9 @@
 <?php
-function createMenu($menu, $currentPage, $rewrite_queries) {	
-	$rendered_menu = '<ul class="nav navbar-nav">\n';
-	$standard_prepend="?p=";
-	$baseurl=_HTTP_URL_;
+function createMenu($menu, $currentPage, $rewrite_queries) {
+	$rendered_menu = "<ul class='nav navbar-nav'>\n";
 
-	if($rewrite_queries) {
-		$standard_prepend="";
-	}	
 	foreach($menu as $name => $val) {
 		$active="";
-		$prependix=$baseurl.$standard_prepend;
 		if($currentPage==$val) {
 			$active=" class='active'";
 		}
@@ -17,9 +11,6 @@ function createMenu($menu, $currentPage, $rewrite_queries) {
 			$dropdown_txt="";
 			foreach ($val as $dname => $dval) {
 				$active="";
-				$prependix=$baseurl.$standard_prepend;
-				if(substr($dval, 0, 8 ) === "https://" || substr($dval, 0, 7 ) === "http://")
-					$prependix="";	
 				if($currentPage==$dval) {
 					$active=" class='active'";
 				}if($dname=='divider') {
@@ -27,7 +18,7 @@ function createMenu($menu, $currentPage, $rewrite_queries) {
 				} else if($dname=='dropdown-header') {
 					$dropdown_txt.="<li class='dropdown-header'>".$dval."</li>\n";
 				} else {
-					$dropdown_txt.="<li><a href='".$prependix.$dval."'>".$dname."</a></li>\n";
+					$dropdown_txt.="<li><a href='".create_url($dval)."'>".$dname."</a></li>\n";
 				}
 			}
 			$rendered_menu.= "<li class='dropdown'>\n".
@@ -36,9 +27,7 @@ function createMenu($menu, $currentPage, $rewrite_queries) {
 			$rendered_menu.= $dropdown_txt;
 			$rendered_menu.= "</ul>\n</li>";
 		} else {
-			if(substr( $val, 0, 7 ) === "http://")
-				$prependix="";
-			$rendered_menu.= "<li".$active."><a href='".$prependix.$val."'>".$name."</a></li>\n";
+			$rendered_menu.= "<li".$active."><a href='".create_url($val)."'>".$name."</a></li>\n";
 		}
 	}
 	$rendered_menu.= "</ul>";	

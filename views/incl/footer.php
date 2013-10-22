@@ -6,5 +6,6 @@
     </div> 
     <!-- /container -->
     <?=include_js_after()?>
+    <?=print_log()?>
   </body>
 </html>

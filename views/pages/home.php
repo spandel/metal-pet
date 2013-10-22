@@ -4,14 +4,21 @@
 		<!-- Main jumbotron for a primary marketing message or call to action -->
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Metal Pet is the new black</h1>
-				<p>
-					A web development, php-based, Bootstrap-including, kick-ass-folder-structuring, web-site-readying super template!
+				<div class="col-md-4">
+				
+					<img class='mp-home-logo' src='<?=_SRC_URL_?>imgs/metal-pet-white-medium.png' />
+				</div>
+				<div class='col-md-8'>
+					<h1>Metal Pet is the new black</h1>
+					
+					<p>
+						A web development, php-based, Bootstrap-including, kick-ass-folder-structuring, web-site-readying super template!
 
-				</p>
-				<h2>For all of your needs.</h2>
-				<br />
-				<p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+					</p>
+					<h2>For all of your needs.</h2>
+					<br />
+					<p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+				</div>
 			</div>
 		</div>
 

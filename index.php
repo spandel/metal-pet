@@ -40,7 +40,5 @@
     	array_push($metalPet['js_after'], _VIEW_URL_."js/".$metalPet['page'].".js");
     }
 
-	include(_BASE_URL_."app/core/include_functions.php");
+	
 	include(_BASE_URL_."views/pages/".$metalPet['page'].".php");
-	//echo("<pre>".print_r($_SERVER, true)."</pre>");
-	//fillDatabaseWithDummyStuff();
