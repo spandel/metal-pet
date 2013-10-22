@@ -23,22 +23,7 @@
 	} else {
 		$metalPet['page']='home';
 	}
-	$metalPet['title']=ucfirst(str_replace('-', ' ', $metalPet['page'])).$metalPet['title_append'];
-	if(is_file($metalPet['theme_server_url']."functions.php")) {
-		include($metalPet['theme_server_url']."functions.php");
-	}
-	if(is_file($metalPet['theme_server_url'].'css/style.css')) {
-		array_push($metalPet['css'], $metalPet['theme_url']."css/style.css");
-	}
-	if(is_file(_VIEW_SERVER_URL_.'css/'.$metalPet['page'].'.css')) {		
-		array_push($metalPet['css'], _VIEW_URL_."css/". $metalPet['page'] .".css");
-	}
-	if (is_file($metalPet['theme_server_url'].'js/main.js')) {
-        array_push($metalPet['js_after'], $metalPet['theme_url']."js/main.js");
-    }
-   	if (is_file(_VIEW_SERVER_URL_.'js/'.$metalPet['page'].'.js')) {
-    	array_push($metalPet['js_after'], _VIEW_URL_."js/".$metalPet['page'].".js");
-    }
-
+	set_title();
+	add_css_and_js();
 	
 	include(_BASE_URL_."views/pages/".$metalPet['page'].".php");

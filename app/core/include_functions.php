@@ -23,6 +23,25 @@ function include_favicon() {
 	}
 	return $favicon;
 }
+function add_css_and_js() {
+	global $metalPet;
+
+	if(is_file($metalPet['theme_server_url']."functions.php")) {
+		include($metalPet['theme_server_url']."functions.php");
+	}
+	if(is_file($metalPet['theme_server_url'].'css/style.css')) {
+		array_push($metalPet['css'], $metalPet['theme_url']."css/style.css");
+	}
+	if(is_file(_VIEW_SERVER_URL_.'css/'.$metalPet['page'].'.css')) {		
+		array_push($metalPet['css'], _VIEW_URL_."css/". $metalPet['page'] .".css");
+	}
+	if (is_file($metalPet['theme_server_url'].'js/main.js')) {
+        array_push($metalPet['js_after'], $metalPet['theme_url']."js/main.js");
+    }
+   	if (is_file(_VIEW_SERVER_URL_.'js/'.$metalPet['page'].'.js')) {
+    	array_push($metalPet['js_after'], _VIEW_URL_."js/".$metalPet['page'].".js");
+    }
+}
 function include_js_after() {
 	global $metalPet;
 	$js="";

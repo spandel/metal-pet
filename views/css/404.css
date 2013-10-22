@@ -4,3 +4,7 @@ CSS Related to specific pages of the site
 body {
 	background-color: white;
 }
+.jumbotron {
+	background-color:black;
+	color:white;	
+}

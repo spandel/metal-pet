@@ -17,7 +17,7 @@ $metalPet['rewrite_queries']= 	true;						//if queries are rewritten, for exampl
 $metalPet['favicon']		=	_SRC_URL_."imgs/metal-pet-black-crop.png";							//Path to favicon
 
 $metalPet['menu'] 			=	array(	'Home'=>'home',		//Creating a menu bar. Rendered by function in theme.
-									'About'=>'about',
+									'About'=>'#about',
 									'GitHub'=>'http://github.com/spandel/metal-pet',
 									'Dropdown'=>array(
 										'Action'=>'home#php-in-the-ground',
@@ -28,3 +28,8 @@ $metalPet['menu'] 			=	array(	'Home'=>'home',		//Creating a menu bar. Rendered b
 										'Separated link'=>'#',
 										'One more separated link'=>'#',
 										),);
+//configure how to set page titles.
+function set_title() {
+	global $metalPet;
+	$metalPet['title']=ucfirst(str_replace('-', ' ', $metalPet['page'])).$metalPet['title_append'];
+}
