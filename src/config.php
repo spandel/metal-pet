@@ -14,7 +14,9 @@ $metalPet['login']			=	false;						//If create a login menu (related to current 
 $metalPet['searchbar']		=	false;						//If create a search bar (related to current theme)
 $metalPet['copyright'] 		= 	"Daniel Spandel &copy; 2013";//Disclaimer displayed at the footer
 $metalPet['rewrite_queries']= 	true;						//if queries are rewritten, for example by mod_rewrite in .htaccess
-$metalPet['favicon']		=	_SRC_URL_."imgs/metal-pet-black-crop.png";							//Path to favicon
+$metalPet['favicon']		=	_SRC_URL_."imgs/metal-pet-black-crop.png";	//Path to favicon
+$metalPet['indexPage']		=	'home';						//Which page to use as index
+$metalPet['404Page']		=	'404';						//Which page to redirect to when queried url is not found
 
 $metalPet['menu'] 			=	array(	'Home'=>'home',		//Creating a menu bar. Rendered by function in theme.
 									'About'=>'#about',

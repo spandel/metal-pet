@@ -6,7 +6,7 @@
 	$pages=_BASE_URL_."views/pages/";
 	
 	if(isset($_GET['p']) && !empty($_GET['p'])) {
-		$metalPet['page'] = "404";		
+		$metalPet['page'] = $metalPet['404Page'];		
 		if(!isset($_GET['p1'])) {
 			if(is_file($pages.$_GET['p'].".php") ) {
 				$metalPet['page']=$_GET['p'];
@@ -21,7 +21,7 @@
 			}
 		}
 	} else {
-		$metalPet['page']='home';
+		$metalPet['page']=$metalPet['indexPage'];
 	}
 	set_title();
 	add_css_and_js();
