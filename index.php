@@ -1,6 +1,10 @@
 <?php
 	define('_BASE_URL_', dirname(__FILE__)."/");
-	define('_HTTP_URL_', "http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/");
+	$dirname=dirname($_SERVER['SCRIPT_NAME']);
+	if(substr($dirname,-1) ==="/") {
+		$dirname=substr($dirname ,0,-1);
+	}
+	define('_HTTP_URL_', "http://".$_SERVER['HTTP_HOST'].$dirname."/");
 	include(_BASE_URL_."app/core/bootstrap.php");
 
 	$pages=_BASE_URL_."views/pages/";
