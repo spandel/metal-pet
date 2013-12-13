@@ -1,0 +1,26 @@
+## Put these configs in your server configuration if you are using nginx, (for example sites-available/default) to enable rewriting of queries.
+#Obviously you might need to modify them a bit, but i decided to include these anyway, so you can get the picture.
+
+location /metal-pet/src {
+}
+location /metal-pet/ {
+	rewrite ^/metal-pet/(.*)/(.*)/(.*)/$ /metal-pet/index.php?p=$1&p1=$2&p2=$3 last;
+	rewrite ^/metal-pet/(.*)/(.*)/(.+)$ /metal-pet/index.php?p=$1&p1=$2&p2=$3 last;
+	rewrite ^/metal-pet/(.*)/(.*)/$ /metal-pet/index.php?p=$1&p1=$2 last;
+	rewrite ^/metal-pet/(.*)/(.+)$ /metal-pet/index.php?p=$1&p1=$2 last;
+	rewrite ^/metal-pet/(.*)/$ /metal-pet/index.php?p=$1 last;
+	rewrite ^/metal-pet/(.+)$ /metal-pet/index.php?p=$1 last;
+	rewrite ^/metal-pet/*$ /metal-pet/index.php last;
+}
+
+#####
+#
+# The above rules are supposed to rewrite like this:
+#
+# root/metal-pet/home/is/here/
+#  to
+# root/metal-pet/index.php?p=home&p1=is&p2=here
+# 
+# root/metal-pet/index.php then handles page-requests (As a front controller).
+# Should work with or without trailing slash
+#####
